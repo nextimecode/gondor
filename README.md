@@ -1,6 +1,6 @@
 # Gondor - O Portal de Notícias Tecnológicas
 
-![Logo do Gondor](url-da-imagem-do-logo-aqui)
+![Logo do Gondor]('./apps/minastirith/public/hero_readme.png')
 
 ## Sobre
 
