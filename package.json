@@ -1,0 +1,122 @@
+{
+  "name": "gondor",
+  "version": "0.0.0-development",
+  "description": "Assim como Gondor era um bastião de resistência e iluminação em meio a tempos turbulentos, nosso site se propõe a ser um farol de notícias confiáveis, análises profundas e insights inovadores no dinâmico mundo da tecnologia",
+  "private": true,
+  "keywords": [],
+  "author": "Pedro Duarte - NeXTIME",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "vercel-build": "pnpm install && pnpm build",
+    "build": "turbo run build --parallel",
+    "clean:all": "turbo run clean && pnpm store prune && rm -rf .next .turbo node_modules tsconfig.tsbuildinfo pnpm-lock.yaml",
+    "dev": "turbo run dev --parallel",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint --parallel",
+    "audit": "pnpm audit",
+    "outdated": "pnpm outdated",
+    "release": "semantic-release",
+    "semantic-release:ui": "semantic-release --config semantic-release-ui.config.js",
+    "release:ui": "turbo run build --filter=ui && changeset publish",
+    "reset:all": "pnpm clean:all && pnpm i && turbo run build --parallel",
+    "start": "turbo run start",
+    "typecheck": "turbo run typecheck --parallel",
+    "update": "pnpm update --latest",
+    "dolamroth:build": "turbo run build --filter dolamroth",
+    "dolamroth:dev": "turbo run dev --filter dolamroth",
+    "minastirith:build": "turbo run build --filter minastirith",
+    "minastirith:dev": "turbo run dev --filter minastirith",
+    "tumladen:build": "turbo run build --filter tumladen",
+    "tumladen:dev": "turbo run dev --filter tumladen",
+    "ui:build": "turbo run build --filter ui",
+    "ui:dev": "turbo run dev --filter ui",
+    "precommit": "turbo lint typecheck audit",
+    "commit": "cz",
+    "prepare": "husky install",
+    "postinstall": "husky install",
+    "depcheck": "depcheck"
+  },
+  "dependencies": {
+    "@next/font": "^14.0.4",
+    "@nextime-ui/icons": "^2.6.1",
+    "@nextime-ui/react": "^2.6.1",
+    "@nextime-ui/theme-tools": "^2.6.1",
+    "@nextime-ui/tokens": "^2.6.1",
+    "@t3-oss/env-nextjs": "^0.7.1",
+    "lucide-react": "^0.299.0",
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.1.0",
+    "zod": "^3.22.4",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@nextime-ui/eslint-config": "^2.6.1",
+    "@nextime-ui/ts-config": "^2.6.1",
+    "@rohan/ui": "workspace:^",
+    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/addon-interactions": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/blocks": "^7.6.6",
+    "@storybook/manager-api": "^7.6.6",
+    "@storybook/react": "^7.6.6",
+    "@storybook/react-vite": "^7.6.6",
+    "@storybook/testing-library": "^0.2.2",
+    "@storybook/theming": "^7.6.6",
+    "@swc/core": "^1.3.101",
+    "@turbo/gen": "^1.11.2",
+    "@types/jest": "^29.5.11",
+    "@types/node": "20.10.5",
+    "@types/prop-types": "^15.7.11",
+    "@types/react": "18.2.45",
+    "@types/react-dom": "18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "autoprefixer": "^10.4.16",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "depcheck": "^1.4.7",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-turbo": "^1.11.2",
+    "eslint-plugin-import-helpers": "^1.3.1",
+    "eslint-plugin-prettier": "^5.1.0",
+    "husky": "^8.0.3",
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.1",
+    "prop-types": "^15.8.1",
+    "semantic-release": "^22.0.12",
+    "semantic-release-monorepo": "^7.0.5",
+    "storybook": "^7.6.6",
+    "tailwindcss": "^3.4.0",
+    "tsup": "^8.0.1",
+    "turbo": "^1.11.2",
+    "typescript": "5.3.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nextimecode/gondor"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
+}
